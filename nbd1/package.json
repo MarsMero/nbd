@@ -1,0 +1,15 @@
+{
+  "name": "nbd1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "mars",
+  "dependencies": {
+    "mongodb": "^4.4.1"
+  }
+}
