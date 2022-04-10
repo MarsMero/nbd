@@ -14,15 +14,16 @@ const run = async () => {
   
     const people = db.collection('people');
   
-    //await init(collection);
+    //await init(people);
 
     const funs = [zad1, zad2, zad3, zad4, zad5, zad6, zad7, zad8, zad9, zad10];
 
-    const promises = funs.map(async f => f(people)).map(async promise => {
+    const promises = funs.map((f, i) => [f(people), i]).map(async tuple => {
+      const [promise, i] = tuple;
       const result = await promise;
-      return fs.writeFile(`out/wyniki_${result[0]}.json`, JSON.stringify(result[1]));
+      return fs.writeFile(`out/wyniki_${i + 1}.json`, JSON.stringify(result));
     });
-    
+
     await Promise.all(promises);
 
   } finally {
@@ -41,26 +42,26 @@ async function init(collection) {
 
 async function zad1(people) {
   const person = await people.findOne();
-  return [1, person];
+  return person;
 }
 
 async function zad2(people) {
   const female = await people.findOne({sex: 'Female'});
-  return [2, female];
+  return female;
 }
 
 async function zad3(people) {
   const cursor = await people.find({nationality: 'Germany'});
   const germnas = await cursor.toArray();
   cursor.close();
-  return [3, germnas];
+  return germnas;
 }
 
 async function zad4(people) {
   const cursor = await people.find({weight: {$gte: '68', $lt: '71.5'}});
   const selected = await cursor.toArray();
   cursor.close();
-  return [4, selected];
+  return selected;
 }
 
 async function zad5(people) {
@@ -69,7 +70,7 @@ async function zad5(people) {
   const cursor = await people.find(query, options);
   const selected = await cursor.toArray();
   cursor.close();
-  return [5, selected];
+  return selected;
 }
 async function zad6(people) {
   const result = await people.insertOne({
@@ -92,31 +93,31 @@ async function zad6(people) {
     nationality: 'Poland',
     credit: []
   });
-  return [6, result];
+  return result;
 }
 
 async function zad7(people) {
   const result = await people.deleteMany({height: {$gt: '190'}});
-  return [7, result];
+  return result;
 }
 
 async function zad8(people) {
   const filter = { 'location.city': 'Moscow' };
   const update = { $set: { 'location.city': 'Moskwa' } };
   const result = await people.updateMany(filter, update);
-  return [8, result];
+  return result;
 }
 
 async function zad9(people) {
   const filter = { 'first_name': 'Antonio' };
   const update = { $set: { 'hobby': 'pingpong'} };
   const result = await people.updateMany(filter, update);
-  return [9, result];
+  return result;
 }
 
 async function zad10(people) {
   const filter = { 'job': 'Editor' };
   const update = { $unset: { 'email': '' } };
   const result = await people.updateMany(filter, update);
-  return [10, result];
+  return result;
 }
