@@ -1,0 +1,134 @@
+﻿[
+  {
+    "coActors": {
+      "identity": 8,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1978,
+        "name": "Emil Eifrem"
+      }
+    }
+  },
+  {
+    "coActors": {
+      "identity": 3,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1961,
+        "name": "Laurence Fishburne"
+      }
+    }
+  },
+  {
+    "coActors": {
+      "identity": 2,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1967,
+        "name": "Carrie-Anne Moss"
+      }
+    }
+  },
+  {
+    "coActors": {
+      "identity": 1,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1964,
+        "name": "Keanu Reeves"
+      }
+    }
+  },
+  {
+    "coActors": {
+      "identity": 71,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1956,
+        "name": "Tom Hanks"
+      }
+    }
+  },
+  {
+    "coActors": {
+      "identity": 107,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1949,
+        "name": "Jim Broadbent"
+      }
+    }
+  },
+  {
+    "coActors": {
+      "identity": 106,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1966,
+        "name": "Halle Berry"
+      }
+    }
+  },
+  {
+    "coActors": {
+      "identity": 119,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1940,
+        "name": "John Hurt"
+      }
+    }
+  },
+  {
+    "coActors": {
+      "identity": 118,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1946,
+        "name": "Stephen Rea"
+      }
+    }
+  },
+  {
+    "coActors": {
+      "identity": 117,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1981,
+        "name": "Natalie Portman"
+      }
+    }
+  },
+  {
+    "coActors": {
+      "identity": 120,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1967,
+        "name": "Ben Miles"
+      }
+    }
+  }
+]

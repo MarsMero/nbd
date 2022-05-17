@@ -1,0 +1,50 @@
+﻿[
+  {
+    "directors": {
+      "identity": 6,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1965,
+        "name": "Lana Wachowski"
+      }
+    }
+  },
+  {
+    "directors": {
+      "identity": 5,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1967,
+        "name": "Lilly Wachowski"
+      }
+    }
+  },
+  {
+    "directors": {
+      "identity": 108,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1965,
+        "name": "Tom Tykwer"
+      }
+    }
+  },
+  {
+    "directors": {
+      "identity": 25,
+      "labels": [
+        "Person"
+      ],
+      "properties": {
+        "born": 1967,
+        "name": "James Marshall"
+      }
+    }
+  }
+]
