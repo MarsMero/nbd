@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvp9gcCMcyGbOYEpkzGNluL9L/Q5fFgA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s9634>; rel="up"
+Last-Modified: Wed, 22 Jun 2022 16:10:07 GMT
+ETag: "6YuDQ5QiuF5peOxutbDFoJ"
+Date: Wed, 22 Jun 2022 16:11:02 GMT
+Content-Type: application/json
+Content-Length: 19
+
+ {"ala": "Makota"}

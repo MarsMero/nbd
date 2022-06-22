@@ -67,7 +67,25 @@ MATCH p=()-[r:FLIES_TO]->() DELETE r
 
 
 // single link
-MATCH p = (a:Airport)<-[:ORIGIN]-(f:Flight)-[:DESTINATION]->(d:Airport)
+MATCH (a:Airport)<-[:ORIGIN]-(f:Flight)-[:DESTINATION]->(d:Airport)
 WITH DISTINCT a,d
 CREATE tr = (a)-[:FLIES_TO]->(d)
 RETURN tr
+
+
+MATCH (a:Airport { name:'LAX' })<-[:ORIGIN]-(f:Flight)-[:DESTINATION]->(d:Airport)
+with a, d, f, min ([(f:Flight)<-[:ASSIGN]-(ticket: Ticket) | ticket.price]) AS ticket_price
+create nr = (a)-[r:FLIES_TO {price: ticket_price}]->(d)
+return nr
+
+MATCH p = (a:Airport  { name:'LAX' })<-[:ORIGIN]-(f:Flight)-[:DESTINATION]->(d:Airport  { name:'TUS' })
+with a,d,f,(f: Flight)<-[:ASSIGN]-(: Ticket) as t
+
+return a,d,f,t
+
+MATCH p = (a:Airport  { name:'LAX' })<-[:ORIGIN]-(f:Flight)-[:DESTINATION]->(d:Airport  { name:'TUS' })
+with a,d,f,(f: Flight)<-[:ASSIGN]-(: Ticket) as t
+create tr = (a)-[:FLIES_TO { price: t.price}]->(d)
+return tr
+
+MATCH (a:Airport)<-[:ORIGIN]-(f:Flight)<-[:ASSIGN]-(t: Ticket), ()

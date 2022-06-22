@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvp9gXlUPEUpkzGNlKNyhfocvCwA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s9634>; rel="up"
+Last-Modified: Wed, 22 Jun 2022 15:59:45 GMT
+ETag: "AyaYgYPBNn975oSzXfCRU"
+Date: Wed, 22 Jun 2022 16:00:49 GMT
+Content-Type: application/json
+Content-Length: 81
+
+ {"name": "John", "number": 8922, "email": "john@test.pl", "epoch": 1655913368 }

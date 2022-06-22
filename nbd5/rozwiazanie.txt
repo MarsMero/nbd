@@ -1,0 +1,59 @@
+curl na linuxie
+1. Umieść w bazie 5 wartości
+curl -X PUT -i -H 'Content-Type: application/json' \
+  -d ' {"name": "Admin", "number": 1234, "email": "admin@test.pl", "epoch": 1655913368} ' \
+  localhost:8098/buckets/s9634/keys/admin
+
+curl -X PUT -i -H 'Content-Type: application/json' \
+  -d ' {"name": "George", "number": 4321, "email": "george@test.pl", "epoch": 1655913368} ' \
+  localhost:8098/buckets/s9634/keys/george
+
+
+curl -X PUT -i -H 'Content-Type: application/json' \
+  -d ' {"name": "Adrian", "number": 1278, "email": "adrian@test.pl", "epoch": 1655913368} ' \
+  localhost:8098/buckets/s9634/keys/adrian
+
+
+curl -X PUT -i -H 'Content-Type: application/json' \
+  -d ' {"name": "Martin", "number": 1278, "email": "test@test.pl", "epoch": 1655913368 } ' \
+  localhost:8098/buckets/s9634/keys/martin
+
+curl -X PUT -i -H 'Content-Type: application/json' \
+  -d ' {"name": "John", "number": 8922, "email": "john@test.pl", "epoch": 1655913368 } ' \
+  localhost:8098/buckets/s9634/keys/john
+
+2. Pobierz z bazy jedną z dodanych przez Ciebie wartości.
+curl -i localhost:8098/buckets/s9634/keys/john
+
+
+3. Zmodyfikuj jedną z wartości – dodając dodatkowe pole do dokumentu.
+curl -X PUT -i -H 'Content-Type: application/json' \
+  -d ' {"name": "John", "number": 8922, "email": "john@test.pl", "epoch": 1655913368, "extra": "something"} ' \
+  localhost:8098/buckets/s9634/keys/john
+
+4. Zmodyfikuj jedną z wartości – usuwając jedną pole z wybranego dokumentu.
+curl -X PUT -i -H 'Content-Type: application/json' \
+  -d ' {"name": "John", "number": 8922, "email": "john@test.pl", "epoch": 1655913368 } ' \
+  localhost:8098/buckets/s9634/keys/john
+
+5. Zmodyfikuj jedną z wartości – zmieniając wartość jednego z pól.
+curl -X PUT -i -H 'Content-Type: application/json' \
+  -d ' {"name": "John", "number": 8922, "email": "john_backup@test.pl", "epoch": 1655913368 } ' \
+  localhost:8098/buckets/s9634/keys/john
+
+6. Usuń jeden z dokumentów z bazy
+curl -X DELETE -i localhost:8098/buckets/s9634/keys/john
+
+7. Spróbuj pobrać z bazy wartość, która nie istnieje w tej bazie.
+curl -i localhost:8098/buckets/s9634/keys/john
+
+8. Dodaj do bazy 1 dokument json (zawierający 1 pole), ale nie specyfikuj klucza.
+curl -X POST -i -H 'Content-Type: application/json' \
+  -d ' {"ala": "Makota"} ' \
+  localhost:8098/buckets/s9634/keys/
+
+9. Pobierz z bazy element z zadania 8
+curl -i localhost:8098/buckets/s9634/keys/KRlCVgrrw72APMgDGJkUmVtuQZ5
+
+10. Usuń z bazy element z zadania 8.
+curl -X DELETE -i localhost:8098/buckets/s9634/keys/KRlCVgrrw72APMgDGJkUmVtuQZ5
